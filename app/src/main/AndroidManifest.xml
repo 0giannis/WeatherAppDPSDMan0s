@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Weatherappam">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".DayDetailActivity"
+            android:exported="false"/>
+
+        <activity android:name=".SettingsActivity"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>
+
+
+    <!--
+     Η άδεια για το Ίντερνετ (<uses-permission...>):
+Είναι ίσως η πιο σημαντική γραμμή. Χωρίς αυτή, η εφαρμογή σου δεν θα μπορούσε να επικοινωνήσει με το Open-Meteo API για να κατεβάσει τον καιρό και θα "κράσαρε" αμέσως.
+
+Η Αρχική Οθόνη (<intent-filter>):
+Μέσα στο μπλοκ της .MainActivity, βλέπεις το <intent-filter>. Αυτό λέει στο λειτουργικό σύστημα του Android: "Αυτή είναι η πρώτη οθόνη που πρέπει να ανοίξεις όταν ο χρήστης πατάει το εικονίδιο της εφαρμογής" (το MAIN και το LAUNCHER κάνουν ακριβώς αυτή τη δουλειά).
+
+Η δήλωση των υπόλοιπων Οθονών (<activity... />):
+Έχεις δηλώσει σωστά την .DayDetailActivity και την .SettingsActivity. Αν ξεχνούσες να τις γράψεις εδώ, η εφαρμογή θα έκλεινε βίαια τη στιγμή που θα προσπαθούσες να πας από την αρχική οθόνη στις ρυθμίσεις ή στις λεπτομέρειες της ημέρας.
+    -->
